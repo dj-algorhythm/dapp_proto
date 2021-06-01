@@ -1,0 +1,17 @@
+{
+  "name": "dapp_proto",
+  "version": "1.0.0",
+  "description": "Ethereum/React smart contract project prototype based on Open Zeppelin Learn",
+  "main": "index.js",
+  "repository": "https://github.com/dj-algorhythm/dapp_proto.git",
+  "author": "dj-algorhythm <djalgorhythm@vivaldi.net>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.1.0",
+    "ganache-cli": "^6.12.2"
+  },
+  "dependencies": {
+    "create-react-app": "^4.0.3"
+  }
+}
