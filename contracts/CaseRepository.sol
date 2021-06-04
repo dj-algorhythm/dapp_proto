@@ -3,8 +3,8 @@ pragma solidity >=0.8.4 <0.9;
 
 contract CaseRepository {
     // Case array
-    Case[] public cases;
-    
+    Case[] cases;
+
     // State variable used to track the number of 
     // created cases and form a unique Id for each case.
     uint caseCount;
@@ -23,7 +23,7 @@ contract CaseRepository {
     // Create the case for incident report, audit, etc..
     // TODO: Implement timedatestamp.
     
-    function createCaseFile() public returns (uint) {
+    function createCaseFile() public returns (uint, address, MgmtPhase) {
         
         Case memory caseFile =  Case({caseId:caseCount++, caseCreator:msg.sender, phase:MgmtPhase.Created});
         
@@ -31,7 +31,7 @@ contract CaseRepository {
         
         emit CaseCreated(caseFile.caseCreator, caseFile.caseId);
 
-        return (caseFile.caseId);
+        return (caseFile.caseId, caseFile.caseCreator, caseFile.phase);
     }
     
     // Declare event for case assignment to an officer, investigator,
